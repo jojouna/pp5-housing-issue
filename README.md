@@ -1,4 +1,67 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Dataset Content
+* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
+* The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+
+|Variable|Meaning|Units|
+|:----|:----|:----|
+|1stFlrSF|First Floor square feet|334 - 4692|
+|2ndFlrSF|Second-floor square feet|0 - 2065|
+|BedroomAbvGr|Bedrooms above grade (does NOT include basement bedrooms)|0 - 8|
+|BsmtExposure|Refers to walkout or garden level walls|Gd: Good Exposure; Av: Average Exposure; Mn: Minimum Exposure; No: No Exposure; None: No Basement|
+|BsmtFinType1|Rating of basement finished area|GLQ: Good Living Quarters; ALQ: Average Living Quarters; BLQ: Below Average Living Quarters; Rec: Average Rec Room; LwQ: Low Quality; Unf: Unfinshed; None: No Basement|
+|BsmtFinSF1|Type 1 finished square feet|0 - 5644|
+|BsmtUnfSF|Unfinished square feet of basement area|0 - 2336|
+|TotalBsmtSF|Total square feet of basement area|0 - 6110|
+|GarageArea|Size of garage in square feet|0 - 1418|
+|GarageFinish|Interior finish of the garage|Fin: Finished; RFn: Rough Finished; Unf: Unfinished; None: No Garage|
+|GarageYrBlt|Year garage was built|1900 - 2010|
+|GrLivArea|Above grade (ground) living area square feet|334 - 5642|
+|KitchenQual|Kitchen quality|Ex: Excellent; Gd: Good; TA: Typical/Average; Fa: Fair; Po: Poor|
+|LotArea| Lot size in square feet|1300 - 215245|
+|LotFrontage| Linear feet of street connected to property|21 - 313|
+|MasVnrArea|Masonry veneer area in square feet|0 - 1600|
+|EnclosedPorch|Enclosed porch area in square feet|0 - 286|
+|OpenPorchSF|Open porch area in square feet|0 - 547|
+|OverallCond|Rates the overall condition of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
+|OverallQual|Rates the overall material and finish of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
+|WoodDeckSF|Wood deck area in square feet|0 - 736|
+|YearBuilt|Original construction date|1872 - 2010|
+|YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
+|SalePrice|Sale Price|34900 - 755000|
+
+
+# Dashboard Design
+
+### Page 1: Quick Project Summary
+
+<details>
+<summary>Project terms and Jargon</summary>
+- Sale price is the current market price of the house with various attributes.
+
+</details>
+
+<details>
+<summary>Project Dataset</summary>
+- The project dataset comes from housing price database in [Kaggle created by Code Institute](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data)
+- 
+
+</details>
+
+<details>
+<summary>Business Requirements</summary>
+
+</details>
+
+
+### Page 2: House Price Correlation Study (BR1)
+
+### Page 3: Project Hypothesis and Validation
+
+### Page 4: Predict House Price (BR2)
+
+### Page 5: ML: House Price Predictor
+
+----
 
 ## Codeanywhere Template Instructions
 
@@ -49,36 +112,6 @@ To log into the Heroku toolbelt CLI:
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-## Dataset Content
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
-* The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
-
-|Variable|Meaning|Units|
-|:----|:----|:----|
-|1stFlrSF|First Floor square feet|334 - 4692|
-|2ndFlrSF|Second-floor square feet|0 - 2065|
-|BedroomAbvGr|Bedrooms above grade (does NOT include basement bedrooms)|0 - 8|
-|BsmtExposure|Refers to walkout or garden level walls|Gd: Good Exposure; Av: Average Exposure; Mn: Minimum Exposure; No: No Exposure; None: No Basement|
-|BsmtFinType1|Rating of basement finished area|GLQ: Good Living Quarters; ALQ: Average Living Quarters; BLQ: Below Average Living Quarters; Rec: Average Rec Room; LwQ: Low Quality; Unf: Unfinshed; None: No Basement|
-|BsmtFinSF1|Type 1 finished square feet|0 - 5644|
-|BsmtUnfSF|Unfinished square feet of basement area|0 - 2336|
-|TotalBsmtSF|Total square feet of basement area|0 - 6110|
-|GarageArea|Size of garage in square feet|0 - 1418|
-|GarageFinish|Interior finish of the garage|Fin: Finished; RFn: Rough Finished; Unf: Unfinished; None: No Garage|
-|GarageYrBlt|Year garage was built|1900 - 2010|
-|GrLivArea|Above grade (ground) living area square feet|334 - 5642|
-|KitchenQual|Kitchen quality|Ex: Excellent; Gd: Good; TA: Typical/Average; Fa: Fair; Po: Poor|
-|LotArea| Lot size in square feet|1300 - 215245|
-|LotFrontage| Linear feet of street connected to property|21 - 313|
-|MasVnrArea|Masonry veneer area in square feet|0 - 1600|
-|EnclosedPorch|Enclosed porch area in square feet|0 - 286|
-|OpenPorchSF|Open porch area in square feet|0 - 547|
-|OverallCond|Rates the overall condition of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
-|OverallQual|Rates the overall material and finish of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
-|WoodDeckSF|Wood deck area in square feet|0 - 736|
-|YearBuilt|Original construction date|1872 - 2010|
-|YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
-|SalePrice|Sale Price|34900 - 755000|
 
 
 
