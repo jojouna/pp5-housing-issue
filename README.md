@@ -20,7 +20,7 @@
 |LotArea| Lot size in square feet|1300 - 215245|
 |LotFrontage| Linear feet of street connected to property|21 - 313|
 |MasVnrArea|Masonry veneer area in square feet|0 - 1600|
-|EnclosedPorch|Enclosed porch area in square feet|0 - 286|
+|EnclosedPorch|Enclosed porch area in square feet0 - 286|
 |OpenPorchSF|Open porch area in square feet|0 - 547|
 |OverallCond|Rates the overall condition of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
 |OverallQual|Rates the overall material and finish of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
@@ -36,19 +36,27 @@
 
 <details>
 <summary>Project terms and Jargon</summary>
-- Sale price is the current market price of the house with various attributes.
+
+- **Sale price** is the current market price of the house with various attributes.
+- **Inherited house** is the house that the client inherited from their grandparents. 
+
 
 </details>
 
 <details>
 <summary>Project Dataset</summary>
-- The project dataset comes from housing price database in [Kaggle created by Code Institute](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data)
-- 
+
+- The project dataset comes from housing price database in [Kaggle](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data) created by Code Institute. 
+- The data represents the housing price in Ames, Iowa, USA with 23 aspects of the house such as the size of the house, built year etc. The total number of houses is 1460.  
 
 </details>
 
 <details>
 <summary>Business Requirements</summary>
+
+The project has two major business requirements. 
+- BR1: The client is interested in discovering the most relevant variable that correlates with the sale price. 
+- BR2: The client wants to have a predicting model of the 4 inherited houses, as well as any other houses in Ames, Iowa. 
 
 </details>
 
