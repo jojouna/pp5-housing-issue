@@ -6,6 +6,10 @@ import seaborn as sns
 import ppscore as pps
 
 
+# Disable the PyplotGlobalUseWarning
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
+
 def page_sale_price_study_body():
     """
     Display housing price and related attributes
@@ -46,16 +50,52 @@ def page_sale_price_study_body():
         f"  *{vars_to_study}*"
     )
 
+    st.info(
+        f"* The below heatmaps were created to highlight the correlation "
+        f"between variables. Spearman, Pearson and Predictive Power Score (PPS)"
+        f" were used to create 3 different heatmaps to have a various of "
+        f"perspectives to check which variables are more correlated to the "
+        f"sale price.\n\n"
+        f"* Each plots are Spearman, Pearson and PPS correlation plots."
+    )
+
     if st.checkbox("Heatmap: Spearman, Pearson and PPS Correlations:"):
-        df_corr_pearson, df_corr_spearman, pps_matrix = CalculateCorrAndPPS(df)
+        df_corr_spearman, df_corr_pearson, pps_matrix = CalculateCorrAndPPS(df)
         DisplayCorrAndPPS(df_corr_spearman = df_corr_spearman, 
                   df_corr_pearson = df_corr_pearson,               
                   pps_matrix = pps_matrix,
                   CorrThreshold = 0.4, PPS_Threshold = 0.2, 
                   figsize=(12,10), font_annot=10)
+    
 
+    st.info(
+        f"After we have conducted correlation studies, we figured out some of "
+        f"the variables that were highly correlated with sale price. "
+        f"We can now display the plots of each variables that were "
+        f"strongly correlated with the sale price according to the type of the "
+        f"variables.\n\n"
+        f"The summary of the plots is, \n\n"
+        f"* Target variable is positively skewed: 1stFlrSF, GrLivArea, " 
+        f"MasVnrArea and TotalBsmtSF have most of sale price clustered on the "
+        f"left side of the plot.\n"
+        f"* The size of the house is correlated with the sale price. 1stFlrSF, "
+        f"GarageArea, GrLivArea, TotalBsmtSF shows that generally when the "
+        f"size is bigger, the sale price grows higher.\n"
+        f"* Recently being remodelled makes the sale price grow up. "
+        f"YearRemodAdd shows when there was a recent remodel with the house, "
+        f"the sale price is higher.\n "
+        f"* Better quality of the house leads to a higher sale price. "
+        f"KitchenQual and OverallQual shows that houses with higher quality "
+        f"have a higher sale price."
+    )
 
+    df_eda = df.filter(vars_to_study + ['SalePrice'])
+    target_var = 'SalePrice'
 
+    st.write("### Data Visualisation")
+
+    if st.checkbox("Sale price by variables"):
+        sale_price_by_variables_plot(df_eda)
 
 
 # Below functions are to load plots on our dashboard
@@ -64,6 +104,9 @@ def page_sale_price_study_body():
 # plt.show() was replaced to fit the steamlit function to show plots.
 
 def heatmap_corr(df, threshold, figsize=(20, 12), font_annot=8):
+    """
+    Function to create heatmap using correlation
+    """
     if len(df.columns) > 1:
         mask = np.zeros_like(df, dtype=np.bool)
         mask[np.triu_indices_from(mask)] = True
@@ -81,6 +124,9 @@ def heatmap_corr(df, threshold, figsize=(20, 12), font_annot=8):
 
 
 def heatmap_pps(df, threshold, figsize=(20, 12), font_annot=8):
+    """
+    Function to create heatmap using pps
+    """
     if len(df.columns) > 1:
         mask = np.zeros_like(df, dtype=np.bool)
         mask[abs(df) < threshold] = True
@@ -94,6 +140,9 @@ def heatmap_pps(df, threshold, figsize=(20, 12), font_annot=8):
 
 
 def CalculateCorrAndPPS(df):
+    """
+    Function to calculate correlation and pps
+    """
     df_corr_spearman = df.corr(method="spearman")
     df_corr_pearson = df.corr(method="pearson")
 
@@ -103,42 +152,61 @@ def CalculateCorrAndPPS(df):
 
     pps_score_stats = pps_matrix_raw.query("ppscore < 1").filter(['ppscore'])\
         .describe().T
-    print("PPS threshold - check PPS score IQR to decide ")
-    print("threshold for heatmap \n")
     print(pps_score_stats.round(3))
 
-    return df_corr_pearson, df_corr_spearman, pps_matrix
+    return df_corr_spearman, df_corr_pearson, pps_matrix
 
 
-def DisplayCorrAndPPS(df_corr_pearson, df_corr_spearman, pps_matrix, 
+def DisplayCorrAndPPS(df_corr_spearman, df_corr_pearson, pps_matrix, 
                       CorrThreshold, PPS_Threshold,
                       figsize=(20, 12), font_annot=8):
-
-    print("\n")
-    print("* Analyse how the target variable for your ML models are ")
-    print("correlated with other variables (features and target)")
-    print("* Analyse multi-colinearity, that is, how the features ")
-    print("are correlated among themselves")
-
-    print("\n")
-    print("*** Heatmap: Spearman Correlation ***")
-    print("It evaluates monotonic relationship \n")
+    """
+    Function to display correlation and pps
+    """
     heatmap_corr(df=df_corr_spearman, threshold=CorrThreshold, 
                  figsize=figsize, font_annot=font_annot)
 
-    print("\n")
-    print("*** Heatmap: Pearson Correlation ***")
-    print("It evaluates the linear relationship between ")
-    print("two continuous variables \n")
     heatmap_corr(df=df_corr_pearson, threshold=CorrThreshold, 
                  figsize=figsize, font_annot=font_annot)
 
-    print("\n")
-    print("*** Heatmap: Power Predictive Score (PPS) ***")
-    print(f"PPS detects linear or non-linear relationships between ")
-    print("two columns.\n")
-    print(f"The score ranges from 0 (no predictive power) ")
-    print("to 1 (perfect predictive power) \n")
-          
     heatmap_pps(df=pps_matrix, threshold=PPS_Threshold, 
                 figsize=figsize, font_annot=font_annot)
+
+
+
+
+
+def sale_price_by_variables_plot(df):
+    numerical_vars = ['1stFlrSF', 'GarageArea', 'GrLivArea', 
+    'MasVnrArea', 'TotalBsmtSF']
+    categorical_vars = ['KitchenQual', 'OverallQual']
+    time_vars = ['GarageYrBlt', 'YearBuilt', 'YearRemodAdd']
+
+    target_var = 'SalePrice'
+
+    for col in df.columns:
+        if col == target_var:
+            continue
+
+        if col in categorical_vars:
+            fig, axes = plt.subplots(figsize=(8, 6))
+            sns.boxplot(data=df, x=col, y=target_var)
+            plt.title(f"Boxplot of {col}")
+            plt.xlabel(col)
+            plt.ylabel(target_var)
+            st.pyplot(fig)
+
+        elif col in numerical_vars:
+            fig, axes = plt.subplots(figsize=(8, 6))
+            sns.lmplot(data=df, x=col, y=target_var, ci=None)
+            plt.title(f"LMplot for {col}")
+            st.pyplot()
+
+        elif col in time_vars:
+            fig, axes = plt.subplots(figsize=(8, 6))
+            sns.lineplot(data=df, x=col, y=target_var)
+            plt.title(f"Lineplot for {col}")
+            plt.xlabel(col)
+            plt.ylabel(target_var)
+            st.pyplot(fig)
+
