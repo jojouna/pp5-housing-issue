@@ -42,8 +42,8 @@
 
 <details>
 <summary>Project Dataset</summary>
-- The project dataset comes from housing price database in [Kaggle created by Code Institute](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data)
-- 
+- The project dataset comes from housing price database in [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data)
+
 
 </details>
 
