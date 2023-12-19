@@ -32,4 +32,14 @@ def page_sale_price_predictor():
 
     st.write(df_inherited_houses)
 
+    st.write(
+        f"* We set only with the most relevant features for the 4 "
+        f"inherited houses, and display the predicted sale price for each "
+        f"house."
+    )
+
+    df_inherited_relevant_features = df_inherited_houses.filter(house_features)
+
+    st.write(df_inherited_relevant_features)
     
+
