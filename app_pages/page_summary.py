@@ -5,18 +5,20 @@ def project_summary():
 
     st.info(
         f"Housing Price Predictor is a project developed to predict housing "
-        f"price in Ames, Iowa, USA based on various attributes of the house.\n\n"
+        f"price in Ames, Iowa, USA based on various attributes of the house."
+        f"\n\n"
         f"**Project terms and Jargon**\n"
-        f"* **Sale price** is the current market price of the house with various "
-        f"attributes.\n"
+        f"* **Sale price** is the current market price of the house with  "
+        f"various attributes.\n"
+        f"The currency is all set to US Dollar.\n"
         f"* **Inherited house** is the house that the client inherited from "
         f"their grandparents.\n\n"
         f"**Project Dataset**\n"
         f"* The project dataset comes from housing price database in "
         f"[Kaggle](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data) "
         f"created by Code Institute.\n"
-        f"* The data represents the housing price in Ames, Iowa, USA with "
-        f"23 aspects of the house such as the size of the house, built year etc."
+        f"* The data represents the housing price in Ames, Iowa, USA with 23"
+        f" aspects of the house such as the size of the house, built year etc."
         f" The total number of houses is 1460."
     )
 
