@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 from src.data_management import (
     load_house_price_data,
     load_inherited_house_data,
@@ -41,5 +42,17 @@ def page_sale_price_predictor():
     df_inherited_relevant_features = df_inherited_houses.filter(house_features)
 
     st.write(df_inherited_relevant_features)
+    sale_price_predict = regression_pipe.predict(df_inherited_relevant_features)
+    # numpy predict function reference: 
+    # https://www.askpython.com/python/examples/python-predict-function
     
+    st.write(
+        f"* Predicted sale price for each 4 inherited house:"
+    )
+    st.success(
+        f"We apply the attributes of 4 inherited houses to our pipeline model "
+        f"that has been already created through investigation."
+    )
+
+    st.write(sale_price_predict.round(0))
 
