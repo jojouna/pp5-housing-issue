@@ -80,6 +80,20 @@ def page_sale_price_predictor():
     # Generate live data
     # Predict the sale price for other houses in Ames, Iowa
     st.write("### Predict Sale Price of Ames, Iowa (BR2 Part 2)")
+
+    st.info(
+        f"* Business Requirement 2: The client is interested in predicting "
+        f"sale price for any house in Ames, Iowa with the attributes that are "
+        f"highly correlated with the sale price.\n"
+    )
+
+    st.write(
+        f"* We have 4 attributes that are strongly correlated with sale price. "
+        f"Below is the function that calculates and predicts the sale price "
+        f"according to the values of the 4 attributes.\n"
+        f"* The client could now enter the values of the attribute to predict "
+        f"the sale price of the house."
+    )
     
     X_live = DrawInputsWidget()
 
