@@ -69,6 +69,20 @@ The project has two major business requirements.
 
 ### Page 5: ML: House Price Predictor
 
+
+# Deployment
+
+Deployment was done through Heroku. 
+
+## Steps
+1. Create setup.sh file (This was already setup by CI's template)
+   1. setup.sh file should contain streamlit configuration requirements to be used on Heroku. This will be the same server configuration code for every Streamlit app I deploy on Heroku.
+2. Create a procfile.
+   1. Should contain web: sh setup.sh && streamlit run app.py
+3. Create a runtime.txt file
+   1. Sets the python environment so that we could reduce conflicts from development to production.
+
+
 ----
 
 ## Codeanywhere Template Instructions
