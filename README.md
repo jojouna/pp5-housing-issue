@@ -81,7 +81,15 @@ Deployment was done through Heroku.
    1. Should contain web: sh setup.sh && streamlit run app.py
 3. Create a runtime.txt file
    1. Sets the python environment so that we could reduce conflicts from development to production.
+4. Go to Heroku, create a new app and link our Github repo
+5. Deploy.
 
+Since we will stick with the python 3.8.12 we do the following steps to avoid error message while deploying.
+1. In dashboard.heroku.com click on Account Settings 
+2. Scroll down to the API Key section and click Reveal. Copy the key.
+Back in your IDE workspace, enter the following command in the terminal: `heroku login -i`, and enter your email then API key that you copied when prompted.
+3. Then use the command `heroku stack:set heroku-20 -a <pp5-housing-price>`
+4. Now deploy again in the Heroku app
 
 ----
 
