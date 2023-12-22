@@ -26,7 +26,7 @@ def page_sale_price_study_body():
     st.write("### Housing Price Correlation Study (BR1)")
     st.info(
         f"* Business Requirement 1: The client is interested in which "
-        f"attributes are highly correlated with the housing price. "
+        f"attributes are highly correlated with the sale price. "
         f"The client expects to visualise the correlated variables "
         f"against the sale price."
     )
@@ -44,7 +44,7 @@ def page_sale_price_study_body():
 
     st.write(
         f"* A correlation study was conducted in the Jupyter notebook to "
-        f"better understand how the variables are correlated to the house "
+        f"better understand how the variables are correlated to the sale "
         f"price. "
         f"The most correlated attributes are \n\n" 
         f"  *{vars_to_study}*"
@@ -56,7 +56,8 @@ def page_sale_price_study_body():
         f" were used to create 3 different heatmaps to have a various of "
         f"perspectives to check which variables are more correlated to the "
         f"sale price.\n\n"
-        f"* Each plots are Spearman, Pearson and PPS correlation plots."
+        f"* Each plots are Spearman, Pearson and PPS correlation plots "
+        f"respectively."
     )
 
     if st.checkbox("Heatmap: Spearman, Pearson and PPS Correlations:"):
@@ -70,7 +71,7 @@ def page_sale_price_study_body():
 
     st.info(
         f"After we have conducted correlation studies, we figured out some of "
-        f"the variables that were highly correlated with sale price. "
+        f"the variables that were highly correlated with the sale price. "
         f"We can now display the plots of each variables that were "
         f"strongly correlated with the sale price according to the type of the "
         f"variables.\n\n"
