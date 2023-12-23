@@ -40,10 +40,8 @@ Live app can be found [here](https://pp5-housing-price-04711200f028.herokuapp.co
 |SalePrice|Sale Price|34900 - 755000|
 
 
-
-
-
 ## Business Requirements
+
 The client has received an inheritance from a deceased great-grandfather, and needs help if the client could maximize the sales price for the inherited properties. Also the client is interested in predicting the sale price from any house in Ames, Iowa in case of future property ownership in that area.
 
 We are using a public dataset with house prices for Ames, Iowa that the client provided. 
@@ -53,11 +51,53 @@ We are using a public dataset with house prices for Ames, Iowa that the client p
 
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them).
+
+* From the 23 variables we needed to collect top 10 variables that correlates the best with out target variable, `SalePrice`. To do this, we have conducted Spearman, Pearson and Power Predictive Score (PPS) tests.
+* Top 10 variables were, 
+```
+'GarageArea', 'GarageYrBlt', 'GrLivArea', 'KitchenQual', 'MasVnrArea', 'OverallQual', 'TotalBsmtSF', 'YearBuilt', 'YearRemodAdd'
+```
+* PPS study showed below 2 variables to have a correlation with the target variable.
+```
+'KitchenQual', 'OverallQual'
+```
+* Since those two variables are also included in the top 10 selection from Spearman and Pearson study, we have finalised that above top 10 variables to have the highest correlation with the SalePrice in creating a prediction ML model. 
+
+* With the given top 10 variables, Exploratory data analysis (EDA) was followed to examine the exact relationship with the SalePrice to derive the hypothesis. 
+
+### Hypothesis
+
+* Size matters: 1stFlrSF, GarageArea, GrLivArea, TotalBsmtSF shows that generally when the size is bigger, the sale price grows higher.
+
+   * We can make our hypothesis 1 as ***The size of a house positively correlates with the sale price***
+
+* Remodeling year matters: YearRemodAdd shows when there was a recent remodel with the house, the sale price is higher.
+
+   * We can make our hypothesis 2 as ***Year of the house remodeling positively correlates with the sale price***
+
+* Quality matters: KitchenQual and OverallQual shows that houses with higher quality have a higher sale price.
+   * We can make our hypothesis 3 as ***The quality of the house positively correlates with the sale price***
 
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+
+* **BR1 - The client is interested in discovering how the house attributes correlate with the sale price.**
+   
+   * We conduct a ***data visualization and correlation study*** to fulfill the business requirement 1. 
+   * For correlation study, we use Spearman and Pearson study to measure the magnitude and the direction between the variables and sale price.
+   * The inspection was done with various plots to visualize the correlation. 
+   * Details of the study could be found at [Data Analysis Notebook](https://github.com/choyoon88/pp5-housing-issue/blob/1d0feda00aab6bd06dbb6e3ca1954fa4e6e18ed3/jupyter_notebooks/03%20-%20Data-Analysis.ipynb)
+
+* **BR2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.**  
+
+   * Since the client is interested in predicting continuous value, we use ***regression machine learning*** to meet the second business requirement. 
+   * After we have collected the 10 most correlated variables to our sale price, we conducted a Grid Search CV to check which regression model should best fit to our project. 
+   * `GradientBoostingRegressor` showed the best performance amount the regressor studies with mean score 0.8, and train and test set with each 0.86 and 0.77 R2 Score. 
+   * With Gradient Boosing Regressor, the 4 most best variables that correlated to sale price was 'OverallQual', 'TotalBsmtSF', 'GarageArea', '2ndFlrSF'
+   * With the selected regressor and the best correlated variables, we predicted the sale price for the 4 inherited houses also created a widget that could predict the sale price by inputting the values. 
+   * Details of the study could be found at [Modelling and Evaluation Notebook](https://github.com/frankiesanjana/housing-price-predictor/blob/f6ce8dd8a4334a05213efaf45d96bd102e85cb7d/jupyter_notebooks/05-modelling-evaluation.ipynb)
+
+
 
 
 ## ML Business Case
@@ -105,11 +145,19 @@ The project has two major business requirements.
 
 
 ## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+* As far as to my knowledge, there is no unfixed bugs. 
 
 
 ## Testing
-- Several E501 line too long (80 > 79 characters), W291 trailing whitespace, E128 continuation line under-indented for visual indent, E251 unexpected spaces around keyword / parameter equals and so on. Most of them were not crucial issues that could hinder the code from running, but I have fixed them for better visialisation. 
+- Conducted Python code testing through [CI Python Linter](https://pep8ci.herokuapp.com/#)
+- Several errors popped up such as E501 line too long (80 > 79 characters), W291 trailing whitespace, E128 continuation line under-indented for visual indent, E251 unexpected spaces around keyword / parameter equals and so on. 
+- Most of them were not crucial that could hinder the code from running, but I have fixed them for better visialisation.
+- See the below image for examples.
+- After fixing the mentioned issues, all Python files are now clean with no issues. 
+
+![pytest1](readme_images/testing_cor_study.png)
+
+![pytest](readme_images/testing_predictor.png)
 
 
 ## Deployment
@@ -117,21 +165,35 @@ The project has two major business requirements.
 Deployment was done through Heroku. 
 
 ### Steps
-1. Create setup.sh file (This was already setup by CI's template)
-   1. setup.sh file should contain streamlit configuration requirements to be used on Heroku. This will be the same server configuration code for every Streamlit app I deploy on Heroku.
-2. Create a procfile.
-   1. Should contain web: sh setup.sh && streamlit run app.py
-3. Create a runtime.txt file
-   1. Sets the python environment so that we could reduce conflicts from development to production.
-4. Go to Heroku, create a new app and link our Github repo
-5. Deploy.
+
+Before deploying on Heroku, there are files that needed to be included on my repository.
+
+1. Create `setup.sh` file (This was already setup by CI's template)
+   1. `setup.sh` file should contain streamlit configuration requirements to be used on Heroku. This will be the same server configuration code for every Streamlit app I deploy on Heroku.
+2. Create a `procfile`.
+   1. Should contain,
+   ```
+   web: sh setup.sh && streamlit run app.py
+   ```
+   
+3. Create a `runtime.txt` file
+   1. Sets the python environment so that we could reduce conflicts from development to production. Should contain,
+   ```
+   python-3.8.17
+   ```
+4. Go to Heroku, and log in.
+5. Create a new app.
+6. At the Deploy tab, select GitHub as the deployment method.
+7. Select my repository name and click Search. Once it is found, click Connect.
 
 Since we will stick with the python 3.8.12 we do the following steps to avoid error message while deploying.
-1. In dashboard.heroku.com click on Account Settings 
-2. Scroll down to the API Key section and click Reveal. Copy the key.
-Back in your IDE workspace, enter the following command in the terminal: `heroku login -i`, and enter your email then API key that you copied when prompted.
-3. Then use the command `heroku stack:set heroku-20 -a <pp5-housing-price>`
-4. Now deploy again in the Heroku app
+
+8. In dashboard.heroku.com click on Account Settings 
+9. Scroll down to the API Key section and click Reveal. Copy the key.
+10. Go back to my IDE workspace, enter the following command in the terminal: `heroku login -i`, and enter my email then API key that I copied when prompted.
+10. Then use the command `heroku stack:set heroku-20 -a <pp5-housing-price>`
+
+11. Go back to Heroku and now select the main branch to deploy, then click Deploy Branch.
 
 
 ### Workspace Environment
@@ -140,6 +202,7 @@ Back in your IDE workspace, enter the following command in the terminal: `heroku
 - First command was `git fetch origin main` 
 - Once fetching was done, I went through merging the repository by the command `git merge origin/main` 
 - This made me to easily work on cross environments.
+
 
 ## Credits 
 
@@ -253,12 +316,7 @@ Although your friend has an excellent understanding of property prices in her ow
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 * The project was deployed to Heroku using the following steps.
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+
 
 ## Main Data Analysis and Machine Learning Libraries
 * Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
