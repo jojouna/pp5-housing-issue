@@ -112,11 +112,11 @@ The project has two major business requirements.
 - Several E501 line too long (80 > 79 characters), W291 trailing whitespace, E128 continuation line under-indented for visual indent, E251 unexpected spaces around keyword / parameter equals and so on. Most of them were not crucial issues that could hinder the code from running, but I have fixed them for better visialisation. 
 
 
-# Deployment
+## Deployment
 
 Deployment was done through Heroku. 
 
-## Steps
+### Steps
 1. Create setup.sh file (This was already setup by CI's template)
    1. setup.sh file should contain streamlit configuration requirements to be used on Heroku. This will be the same server configuration code for every Streamlit app I deploy on Heroku.
 2. Create a procfile.
@@ -133,6 +133,13 @@ Back in your IDE workspace, enter the following command in the terminal: `heroku
 3. Then use the command `heroku stack:set heroku-20 -a <pp5-housing-price>`
 4. Now deploy again in the Heroku app
 
+
+### Workspace Environment
+- Since of the insufficient memory issue with Gitpod, main coding workspace including Jupyter notebook and Streamlit was conducted through Codeanywhere. But writing README file was done on Gitpod. 
+- To continuously work on the up-to-dated repository on a different workspace, I used `git fetch` and `git merge`. 
+- First command was `git fetch origin main` 
+- Once fetching was done, I went through merging the repository by the command `git merge origin/main` 
+- This made me to easily work on cross environments.
 
 ## Credits 
 
