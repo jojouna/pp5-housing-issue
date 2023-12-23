@@ -1,4 +1,5 @@
-import streamlit as st 
+import streamlit as st
+
 
 class MultiPage:
     """
@@ -23,8 +24,9 @@ class MultiPage:
         """
         Sets title of application, creates side bar
         with radio button for page selection, and runs
-        the function associated with 
+        the function associated with
         """
         st.title(self.app_name)
-        page = st.sidebar.radio('Menu', self.pages, format_func=lambda page: page['title'])
-        page['function']() 
+        page = st.sidebar.radio('Menu', self.pages,
+                                format_func=lambda page: page['title'])
+        page['function']()

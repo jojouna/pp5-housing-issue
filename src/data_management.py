@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
+
 # load housing data with all attributes
 @st.cache(suppress_st_warning=True, allow_output_mutation=True)
 def load_house_price_data():

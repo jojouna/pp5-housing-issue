@@ -1,4 +1,5 @@
-import streamlit as st 
+import streamlit as st
+
 
 def project_summary():
     st.write("### Quick Project Summary")
@@ -40,6 +41,6 @@ def project_summary():
         f"The project has two major business requirements.\n\n"
         f"* BR1: The client is interested in discovering the most relevant "
         f"variable that correlates with the sale price.\n"
-        f"* BR2: The client wants to have a predicting model of the 4 inherited "
-        f"houses, as well as any other houses in Ames, Iowa.\n\n"
+        f"* BR2: The client wants to have a predicting model of the "
+        f"4 inherited houses, as well as any other houses in Ames, Iowa.\n\n"
     )

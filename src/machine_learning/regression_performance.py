@@ -24,26 +24,28 @@ def regression_evaluation(X, y, pipeline):
     st.write(
         'Mean Squared Error:', mean_squared_error(y, prediction).round(3))
     st.write(
-        'Root Mean Squared Error:', np.sqrt(
-        mean_squared_error(y, prediction)).round(3))
+        'Root Mean Squared Error:', np.sqrt(mean_squared_error(y,
+                                            prediction)).round(3))
     st.write("\n")
 
 
 def regression_evaluation_plots(
-    X_train, y_train, X_test, y_test, pipeline, alpha_scatter=0.5):
+     X_train, y_train, X_test, y_test, pipeline, alpha_scatter=0.5):
     pred_train = pipeline.predict(X_train)
     pred_test = pipeline.predict(X_test)
 
     fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 6))
-    sns.scatterplot(x=y_train['SalePrice'], y=pred_train, alpha=alpha_scatter, ax=axes[0])
-    sns.lineplot(x=y_train['SalePrice'], y=y_train['SalePrice'], color='red', ax=axes[0])
+    sns.scatterplot(x=y_train['SalePrice'],
+                    y=pred_train, alpha=alpha_scatter, ax=axes[0])
+    sns.lineplot(x=y_train['SalePrice'],
+                 y=y_train['SalePrice'], color='red', ax=axes[0])
     axes[0].set_xlabel("Actual")
     axes[0].set_ylabel("Predictions")
     axes[0].set_title("* Train Set")
 
-    sns.scatterplot(x=y_test['SalePrice'], y=pred_test, 
+    sns.scatterplot(x=y_test['SalePrice'], y=pred_test,
                     alpha=alpha_scatter, ax=axes[1])
-    sns.lineplot(x=y_test['SalePrice'], y=y_test['SalePrice'], 
+    sns.lineplot(x=y_test['SalePrice'], y=y_test['SalePrice'],
                  color='red', ax=axes[1])
     axes[1].set_xlabel("Actual")
     axes[1].set_ylabel("Predictions")

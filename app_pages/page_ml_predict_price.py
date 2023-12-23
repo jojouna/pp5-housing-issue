@@ -19,7 +19,8 @@ def page_ml_predict_price():
     regression_pipe = load_pkl_file(
         f"outputs/ml_pipeline/predict_saleprice/{version}/clf_pipeline.pkl")
     feature_importance_plot = plt.imread(
-        f"outputs/ml_pipeline/predict_saleprice/{version}/feature_importance_plot.png"
+        f"outputs/ml_pipeline/predict_saleprice"
+        f"/{version}/feature_importance_plot.png"
     )
     X_train = pd.read_csv(
         f"outputs/ml_pipeline/predict_saleprice/{version}/X_train.csv"
@@ -47,7 +48,7 @@ def page_ml_predict_price():
         f"each train set and test set for **0.86** and **0.77**\n"
         f"* Following is the pipeline steps we took to reach the above "
         f"conclusion."
-    )    
+    )
     st.write("---")
 
     st.info(
@@ -83,9 +84,9 @@ def page_ml_predict_price():
         f"* Our pipeline shows that our model performance have been met."
     )
     regression_performance(X_train=X_train, y_train=y_train,
-                          X_test=X_test, y_test=y_test,
-                          pipeline=regression_pipe)
-    
+                           X_test=X_test, y_test=y_test,
+                           pipeline=regression_pipe)
+
     st.write(
         f"### Regression Performance Plot"
     )

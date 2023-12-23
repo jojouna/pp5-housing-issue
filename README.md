@@ -1,4 +1,14 @@
-# Dataset Content
+# Housing Price Predictor
+
+![app_main](readme_images/app_main.png)
+
+Housing Price Predictor is a project developed to predict housing price in Ames, Iowa, USA. This is a fifth project from Code Institute's Diploma in Full Stack Software Development in Predictive Analytics. The code is written in Python using Jupyter notebook with Streamlit as a dashboard development environment. The project is deployed using Heroku. 
+
+Live app can be found [here](https://pp5-housing-price-04711200f028.herokuapp.com/) 
+(*Ctrl or Cmd + mouse click to open on a new tab*)
+
+
+## Dataset Content
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
@@ -30,7 +40,31 @@
 |SalePrice|Sale Price|34900 - 755000|
 
 
-# Dashboard Design
+
+
+
+## Business Requirements
+The client has received an inheritance from a deceased great-grandfather, and needs help if the client could maximize the sales price for the inherited properties. Also the client is interested in predicting the sale price from any house in Ames, Iowa in case of future property ownership in that area.
+
+We are using a public dataset with house prices for Ames, Iowa that the client provided. 
+
+* BR1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+* BR2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+
+
+## Hypothesis and how to validate?
+* List here your project hypothesis(es) and how you envision validating it (them).
+
+
+## The rationale to map the business requirements to the Data Visualisations and ML tasks
+* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+
+
+## ML Business Case
+* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+
+
+## Dashboard Design
 
 ### Page 1: Quick Project Summary
 
@@ -70,6 +104,14 @@ The project has two major business requirements.
 ### Page 5: ML: House Price Predictor
 
 
+## Unfixed Bugs
+* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+
+
+## Testing
+- Several E501 line too long (80 > 79 characters), W291 trailing whitespace, E128 continuation line under-indented for visual indent, E251 unexpected spaces around keyword / parameter equals and so on. Most of them were not crucial issues that could hinder the code from running, but I have fixed them for better visialisation. 
+
+
 # Deployment
 
 Deployment was done through Heroku. 
@@ -90,6 +132,29 @@ Since we will stick with the python 3.8.12 we do the following steps to avoid er
 Back in your IDE workspace, enter the following command in the terminal: `heroku login -i`, and enter your email then API key that you copied when prompted.
 3. Then use the command `heroku stack:set heroku-20 -a <pp5-housing-price>`
 4. Now deploy again in the Heroku app
+
+
+## Credits 
+
+* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
+* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+
+### Content 
+
+- The text for the Home page was taken from Wikipedia Article A
+- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
+- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+
+### Media
+
+- The photos used on the home and sign-up page are from This Open Source site
+- The images used for the gallery page were taken from this other open-source site
+
+
+
+## Acknowledgements (optional)
+* In case you would like to thank the people that provided support through this project.
+
 
 ----
 
@@ -141,9 +206,6 @@ To log into the Heroku toolbelt CLI:
 5. Paste in your API key when asked
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-
-
 
 
 

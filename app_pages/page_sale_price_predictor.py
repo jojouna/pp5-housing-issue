@@ -23,9 +23,9 @@ def page_sale_price_predictor():
     st.write("### Predict Sale Price of Inherited Houses (BR2 Part 1)")
 
     st.info(
-        f"* Business Requirement 2: The client is interested in predicting the "
-        f"sale price for her 4 inherited houses, and any other sale price "
-        f"in Ames, Iowa."
+        f"* Business Requirement 2: The client is interested in predicting "
+        f"the sale price for her 4 inherited houses, and any other sale "
+        f"price in Ames, Iowa."
     )
 
     st.write(
@@ -36,25 +36,24 @@ def page_sale_price_predictor():
 
     st.write(
         f"* We set only with the most relevant features as an attribute "
-        f"for the 4 inherited houses, and display the predicted sale price for "
-        f"each house."
+        f"for the 4 inherited houses, and display the predicted sale price "
+        f"for each house."
     )
 
     df_inherited_relevant_features = df_inherited_houses.filter(house_features)
 
     st.write(df_inherited_relevant_features)
 
-
     # function to predict the sale price for inherited houses
-    sale_price_predict = regression_pipe.predict(df_inherited_relevant_features)
+    sale_price_predict = regression_pipe.predict(
+        df_inherited_relevant_features)
     """
-    Numpy predict function reference: 
+    Numpy predict function reference:
     https://www.askpython.com/python/examples/python-predict-function
     """
 
-    
     # Change the column name from 0 to Predicted Sale Price
-    sale_price_predict_df = pd.DataFrame(sale_price_predict, 
+    sale_price_predict_df = pd.DataFrame(sale_price_predict,
                                          columns=["Predicted Sale Price"])
 
     st.write(
@@ -68,13 +67,13 @@ def page_sale_price_predictor():
 
     # Show the predicted price for each house
     st.write(sale_price_predict_df.round(0))
-    
+
     # Sum the total predicted price for 4 houses
     price_sum = sale_price_predict_df["Predicted Sale Price"].sum()
     st.success(
         f"The sum of predicted sale price for 4 houses is ${price_sum.round()}"
         )
-    
+
     st.write("---")
 
     # Generate live data
@@ -88,13 +87,13 @@ def page_sale_price_predictor():
     )
 
     st.write(
-        f"* We have 4 attributes that are strongly correlated with sale price. "
-        f"Below is the function that calculates and predicts the sale price "
-        f"according to the values of the 4 attributes.\n"
+        f"* We have 4 attributes that are strongly correlated with sale "
+        f"price. Below is the function that calculates and predicts the "
+        f"sale price according to the values of the 4 attributes.\n"
         f"* The client could now enter the values of the attribute to predict "
         f"the sale price of the house."
     )
-    
+
     X_live = DrawInputsWidget()
 
     # load dataset
@@ -109,7 +108,7 @@ def page_sale_price_predictor():
 
 def DrawInputsWidget():
     """
-    Define inputs widget so that the user can enter attributes of the 
+    Define inputs widget so that the user can enter attributes of the
     house so that they can predict the sale price.
     """
     # load dataset
