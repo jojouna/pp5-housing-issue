@@ -113,7 +113,7 @@ def DrawInputsWidget():
     """
     # load dataset
     df = load_house_price_data()
-    percentageMin, percentageMax = 0.4, 1.0
+    percentageMin, percentageMax = 0.4, 2.0
 
     # create input widgets for 4 features
     col1, col2 = st.beta_columns(2)
