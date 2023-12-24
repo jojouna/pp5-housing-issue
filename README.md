@@ -15,6 +15,8 @@ Live app can be found [here](https://pp5-housing-price-04711200f028.herokuapp.co
    * [Hypothesis](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#hypothesis)
 * [The rationale to map the business requirements to the Data Visualisations and ML tasks](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
 * [ML Business Case](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#ml-business-case)
+   * [Epics](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#epics)
+   * [User Story](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#user-story)
 * [Dashboard Design](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#dashboard-design)
    * [Page 1: Quick Project Summary](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#page-1-quick-project-summary)
    * [Page 2: House Price Correlation Study (BR1)](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#page-2-house-price-correlation-study-br1)
