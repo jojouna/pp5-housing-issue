@@ -26,6 +26,7 @@ Live app can be found [here](https://pp5-housing-price-04711200f028.herokuapp.co
 * [Deployment](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#deployment)
    * [Steps](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#steps)
    * [Workspace Environment](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#workspace-environment)
+* [Credits](https://github.com/choyoon88/pp5-housing-issue#credits)
 
 
 ## Business Requirements
