@@ -186,7 +186,7 @@ In order to meet the business requirement, we have set the epics and user storie
    * We will present the predicted sale price for the client's four inherited house and also the summed amount for the price. 
    * We also present a live widget that could predict the sale price by entering values of the house attributes. 
 
-* Our client has an excellent understanding and knowledge of property prices in Belgium.
+* Heuristics: Our client has an excellent understanding and knowledge of property prices in Belgium.
 
    * Since the client has some background understanding on housing market, the client will try to use their own knowledge first when predicting the sale price of the inherited houses and the prices in Ames, Iowa. 
    * Although the background knowledge could be helpful in some ways, this could lead to an inaccurate prediction considering that the housing markets have different circumstances across the area and/or country. 
