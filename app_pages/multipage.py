@@ -4,10 +4,14 @@ import streamlit as st
 class MultiPage:
     """
     Class to generate multiple Streamlit pages
-    using an object oriented approach
+    using an object oriented approach.
+    This functions is to be used on app.py
     """
 
     def __init__(self, app_name) -> None:
+        """
+        Initialize the MultiPage class.
+        """
         self.pages = []
         self.app_name = app_name
 
@@ -17,6 +21,9 @@ class MultiPage:
         )
 
     def add_page(self, title, func) -> None:
+        """
+        Add a new page on Streamlit dashboard
+        """
         self.pages.append({"title": title, "function": func})
 
     def run(self):

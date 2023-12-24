@@ -6,8 +6,11 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
 
-# below code were adapted from 05 - modelling-evaluation notebook
 def regression_performance(X_train, y_train, X_test, y_test, pipeline):
+    """
+    Function to show regression performance result.
+    Code adapted from Modelling-Evaluation notebook.
+    """
     st.write("### Model Evaluation \n")
     st.write("#### Train Set \n")
     regression_evaluation(X_train, y_train, pipeline)
@@ -16,6 +19,10 @@ def regression_performance(X_train, y_train, X_test, y_test, pipeline):
 
 
 def regression_evaluation(X, y, pipeline):
+    """
+    Function to show regression evaluation result.
+    Code adapted from Modelling-Evaluation notebook.
+    """
     prediction = pipeline.predict(X)
     st.write(
         'R2 Score:', r2_score(y, prediction).round(3))
@@ -31,6 +38,10 @@ def regression_evaluation(X, y, pipeline):
 
 def regression_evaluation_plots(
      X_train, y_train, X_test, y_test, pipeline, alpha_scatter=0.5):
+    """
+    Function to display the regression evaluation plots.
+    Code adapted from Modelling-Evaluation notebook.
+    """
     pred_train = pipeline.predict(X_train)
     pred_test = pipeline.predict(X_test)
 
