@@ -11,10 +11,9 @@ from src.machine_learning.regression_performance import (
 
 def page_ml_predict_price():
     """
-    Display ML pipeline and feature importance plit
+    Display ML pipeline and feature importance plot
     """
 
-    # load the data
     version = 'v1'
     regression_pipe = load_pkl_file(
         f"outputs/ml_pipeline/predict_saleprice/{version}/clf_pipeline.pkl")
@@ -39,7 +38,6 @@ def page_ml_predict_price():
         f"### ML: Predict Sale Price"
     )
 
-    # summary of the page
     st.info(
         f"* To meet the business requirement 2, we trained a regression model "
         f"to predict the sale price of the houses in Ames, Iowa. The pipeline "

@@ -10,10 +10,17 @@ from src.machine_learning.predictive_analysis_ui import predict_sale_price
 
 
 def page_sale_price_predictor():
-
+    """
+    Part 1: Create a sale price prediction of the client's
+    four inherited houses by implementing the data of the
+    inherited houses' attribute values to the regression pipe.
+    Part 2: Create a predict sale price widget that has the
+    input areas of the relevant attributes and display
+    the predicted price by passing the input values to the
+    regression pipe.
+    """
     version = "v1"
 
-    # load predict price files
     regression_pipe = load_pkl_file(
         f"outputs/ml_pipeline/predict_saleprice/{version}/clf_pipeline.pkl")
     house_features = pd.read_csv(
@@ -44,7 +51,6 @@ def page_sale_price_predictor():
 
     st.write(df_inherited_relevant_features)
 
-    # function to predict the sale price for inherited houses
     sale_price_predict = regression_pipe.predict(
         df_inherited_relevant_features)
     """
@@ -52,7 +58,6 @@ def page_sale_price_predictor():
     https://www.askpython.com/python/examples/python-predict-function
     """
 
-    # Change the column name from 0 to Predicted Sale Price
     sale_price_predict_df = pd.DataFrame(sale_price_predict,
                                          columns=["Predicted Sale Price"])
 
@@ -65,10 +70,8 @@ def page_sale_price_predictor():
         f"that has been already created through investigation."
     )
 
-    # Show the predicted price for each house
     st.write(sale_price_predict_df.round(0))
 
-    # Sum the total predicted price for 4 houses
     price_sum = sale_price_predict_df["Predicted Sale Price"].sum()
     st.success(
         f"The sum of predicted sale price for 4 houses is ${price_sum.round()}"
@@ -76,8 +79,6 @@ def page_sale_price_predictor():
 
     st.write("---")
 
-    # Generate live data
-    # Predict the sale price for other houses in Ames, Iowa
     st.write("### Predict Sale Price of Ames, Iowa (BR2 Part 2)")
 
     st.info(
@@ -96,10 +97,8 @@ def page_sale_price_predictor():
 
     X_live = DrawInputsWidget()
 
-    # load dataset
     df = load_house_price_data()
 
-    # predict on live data
     if st.button("Predict Sale Price"):
         price_prediction = predict_sale_price(
             X_live, regression_pipe, house_features
@@ -111,15 +110,13 @@ def DrawInputsWidget():
     Define inputs widget so that the user can enter attributes of the
     house so that they can predict the sale price.
     """
-    # load dataset
+
     df = load_house_price_data()
     percentageMin, percentageMax = 0.4, 2.0
 
-    # create input widgets for 4 features
     col1, col2 = st.beta_columns(2)
     col3, col4 = st.beta_columns(2)
 
-    # create an empty DataFrame, which will be the live data
     X_live = pd.DataFrame([], index=[0])
 
     with col1:

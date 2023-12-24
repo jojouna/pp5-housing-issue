@@ -2,6 +2,9 @@ import streamlit as st
 
 
 def project_summary():
+    """
+    Project summary that will show on the summary part on the dashboard
+    """
     st.write("### Quick Project Summary")
 
     st.info(
@@ -29,7 +32,6 @@ def project_summary():
         f" The total number of houses is 1460."
     )
 
-    # Link to project README file for more information of the project
     st.write(
         f"For additional information, please visit the "
         f"[Project Readme File](https://github.com/choyoon88/"

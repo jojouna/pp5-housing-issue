@@ -15,10 +15,8 @@ def page_sale_price_study_body():
     Display housing price and related attributes
     """
 
-    # load the data
     df = load_house_price_data()
 
-    # hard copy from data analysis notebook
     vars_to_study = ['1stFlrSF', 'GarageArea', 'GarageYrBlt', 'GrLivArea',
                      'KitchenQual', 'MasVnrArea', 'OverallQual', 'TotalBsmtSF',
                      'YearBuilt', 'YearRemodAdd']
@@ -31,7 +29,6 @@ def page_sale_price_study_body():
         f"against the sale price."
     )
 
-    # inspect the total housing data (df)
     if st.checkbox("Inspect Housing Data"):
         st.write(
             f"The dataset has {df.shape[0]} rows and {df.shape[1]} columns. "
@@ -97,14 +94,12 @@ def page_sale_price_study_body():
         sale_price_by_variables_plot(df_eda)
 
 
-# Below functions are to load plots on our dashboard
-# that are related with the sale price.
-# Codes were hard copied from 03 - Data-Analysis Jupyter notebook.
-# plt.show() was replaced to fit the steamlit function to show plots.
-
 def heatmap_corr(df, threshold, figsize=(20, 12), font_annot=8):
     """
-    Function to create heatmap using correlation
+    Function to create heatmap using correlation.
+    Codes were adapted from data-analysis jupyter notebook.
+    From the original codes, plt.show() was replaced to fit the 
+    streamlit function to show plots.
     """
     if len(df.columns) > 1:
         mask = np.zeros_like(df, dtype=np.bool)
@@ -173,6 +168,11 @@ def DisplayCorrAndPPS(df_corr_spearman, df_corr_pearson, pps_matrix,
 
 
 def sale_price_by_variables_plot(df):
+    """
+    Create a three different kind of plots of the 
+    top 10 variables that correlate with the sale price.
+    Plots differ by the kind of variables.
+    """
     numerical_vars = ['1stFlrSF', 'GarageArea', 'GrLivArea',
                       'MasVnrArea', 'TotalBsmtSF']
     categorical_vars = ['KitchenQual', 'OverallQual']

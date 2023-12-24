@@ -93,28 +93,28 @@ In order to meet the business requirement, we have set the epics and user storie
 
 ### User Story
 
-- User Story 1: As a client, I would want to know which housing attributes correlate the most in the sale price so that I can base my attributes in predicting sale price. 
+- User Story 1: As a client, I would want to know which housing attributes correlate the most in the sale price so that I can base my attributes in predicting sale price. (***Mapped with Business Requirement 1***)
    - Produced a Spearman, Pearson and PPS heatmap to visualise the highly correlated variables, and conducted a modelling test to find the best features among the highly correlated variables that correlates the most to the sale price.
 
-- User Story 2: As a client, I would want to know the predicted sale price of my 4 inherited houses, so that I can sell them at the maximum price as possible.
+- User Story 2: As a client, I would want to know the predicted sale price of my 4 inherited houses, so that I can sell them at the maximum price as possible. (***Mapped with Business Requirement 2***)
    - Using the trained model, we applied the house attribute data for the 4 inherited houses to predict the sale price. 
 
-- User Story 3: As a client, I would want to predict the sale price of any houses in Ames, Iowa, so that I can have insights of the property market in Ames, Iowa.
+- User Story 3: As a client, I would want to predict the sale price of any houses in Ames, Iowa, so that I can have insights of the property market in Ames, Iowa. (***Mapped with Business Requirement 2***)
    - Using the trained model, we created a section to input the values of the most correlated housing attributes to have a predicted sale price.
 
 - User Story 4: As a client, I want a dashboard, so that I can display the results and have the price predictor as a stand alone application. 
    - Dashboard has been deployed with the predictor.
 
-- User Story 5: As a technical user, I want to understand the ML steps that were used to deliver the sale price predictor, so that I can understand the model.
+- User Story 5: As a technical user, I want to understand the ML steps that were used to deliver the sale price predictor, so that I can understand the model. (***Mapped with Business Requirement 2***)
    - Model evaluation, techniques and steps are listed on thet Feature Engineering and Modelling Evaluation jupyter notebook with plots and tables for better visibility.
 
-- User Story 6: As a technical user, I want to know the model performance, so that I can see how reliable the model is. 
+- User Story 6: As a technical user, I want to know the model performance, so that I can see how reliable the model is. (***Mapped with Business Requirement 2***)
    - Train and test set R2 scores are listed on Modelling Evaluation notebook and also on the ML House Price Prediction section at the deployed app.
 
-- User Story 7: As a user, I want to interact with the predictor widget, so that I can play around with the tool to have a real-time sale price.
+- User Story 7: As a user, I want to interact with the predictor widget, so that I can play around with the tool to have a real-time sale price. (***Mapped with Business Requirement 2***)
    - Sale price predictor has been developed and deployed on the live app under Sale Price Predictor section.
 
-- User Story 8: As a user, I want to know the source of the dataset, so that I can understand about the dataset and the limitation.
+- User Story 8: As a user, I want to know the source of the dataset, so that I can understand about the dataset and the limitation. (***Mapped with Business Requirement 1***)
    - Details of the dataset has been described on the dashboard and also on this readme file.
 
 
@@ -318,7 +318,7 @@ This page contains,
 - Conducted Python code testing through [CI Python Linter](https://pep8ci.herokuapp.com/#)
 - Several errors popped up such as E501 line too long (80 > 79 characters), W291 trailing whitespace, E128 continuation line under-indented for visual indent, E251 unexpected spaces around keyword / parameter equals and so on. 
 - Most of them were not crucial that could hinder the code from running, but I have fixed them for better visialisation.
-- See the below image for examples.
+- See the below image for examples of errors.
 - After fixing the mentioned issues, all Python files are now clean with no issues. 
 
 ![pytest1](readme_images/testing_cor_study.png)
@@ -346,18 +346,24 @@ Before deploying on Heroku, there are files that needed to be included on my rep
    python-3.8.17
    ```
 4. Go to Heroku, and log in.
-5. Create a new app.
+5. Create a new app by adding the app name and choosing the correct region.
+![heroku1](readme_images/heroku01.png)
+
 6. At the Deploy tab, select GitHub as the deployment method.
+
 7. Select my repository name and click Search. Once it is found, click Connect.
+![he2](readme_images/heroku02.png)
 
 Since we will stick with the python 3.8.12 we do the following steps to avoid error message while deploying.
 
 8. In dashboard.heroku.com click on Account Settings 
 9. Scroll down to the API Key section and click Reveal. Copy the key.
+![he4](readme_images/heroku04.png)
+
 10. Go back to my IDE workspace, enter the following command in the terminal: `heroku login -i`, and enter my email then API key that I copied when prompted.
 10. Then use the command `heroku stack:set heroku-20 -a <pp5-housing-price>`
 11. Go back to Heroku and now select the main branch to deploy, then click Deploy Branch.
-
+![he3](readme_images/heroku03.png)
 
 ### Workspace Environment
 

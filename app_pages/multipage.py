@@ -17,7 +17,6 @@ class MultiPage:
         )
 
     def add_page(self, title, func) -> None:
-        # add a new page to the list of pages
         self.pages.append({"title": title, "function": func})
 
     def run(self):
