@@ -11,9 +11,9 @@ Live app can be found [here](https://pp5-housing-price-04711200f028.herokuapp.co
 
 * [Dataset Content](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#dataset-content)
 * [Business Requirements](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#business-requirements)
-* [Hypothesis and how to validate?](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#hypothesis-and-how-to-validate)
+* [Hypothesis and How to Validate](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#hypothesis-and-how-to-validate)
    * [Hypothesis](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#hypothesis)
-* [The rationale to map the business requirements to the Data Visualisations and ML tasks](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
+* [The Rationale to Map the Business Requirements to the Data Visualisations and ML tasks](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
 * [ML Business Case](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#ml-business-case)
    * [Epics](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#epics)
    * [User Story](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#user-story)
@@ -72,7 +72,7 @@ We are using a public dataset with house prices for Ames, Iowa that the client p
 * BR1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
 * BR2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
-In order to meet the business requirement, we have set the epics and user stories. Also the epics process is mapped with CRISP-MD (Cross Industry Standard Process for Data Mining). See the below image for CRISP-MD steps.
+In order to meet the business requirement, we have set the epics and user stories. Also the epics process is mapped with CRISP-DM (Cross Industry Standard Process for Data Mining). See the below image for CRISP-MD steps.
 
 ![crisp-dm](readme_images/CRISP-DM_Process_Diagram.png)
 
@@ -80,21 +80,21 @@ In order to meet the business requirement, we have set the epics and user storie
 
 - Business understanding
    - CRISP-DM Business Understanding
-- Data gathering and colletion
-   - CRISP-DM: Data Understanding
+- Data gathering and collection
+   - CRISP-DM Data Understanding
 - Data visualistion, cleaning and preparation
-   - CRISP-DM: Data Prepatation
+   - CRISP-DM Data Preparation
 - Model training and optimisation
-   - CRISP-MD: Modelling, Evaluation
+   - CRISP-DM Modelling, Evaluation
 - Dashboard planning, designing and development
-   - CRISP-MD: Business Understanding and Data Understanding
+   - CRISP-DM Business Understanding and Data Understanding
 - Dashboard deployment
-   - CRISP-MD: Deployment
+   - CRISP-DM Deployment
 
 ### User Story
 
-- User Story 1: As a client, I would want to know which housing attributes correlates the most in sale price so that I can base my attributes in predicting sale price. 
-   - Produced a Spearman, Pearson and PPS heatmap to visualise the highly correlated variables, and conducted a modelling test to find the best features that correlates to the sale price.
+- User Story 1: As a client, I would want to know which housing attributes correlate the most in the sale price so that I can base my attributes in predicting sale price. 
+   - Produced a Spearman, Pearson and PPS heatmap to visualise the highly correlated variables, and conducted a modelling test to find the best features among the highly correlated variables that correlates the most to the sale price.
 
 - User Story 2: As a client, I would want to know the predicted sale price of my 4 inherited houses, so that I can sell them at the maximum price as possible.
    - Using the trained model, we applied the house attribute data for the 4 inherited houses to predict the sale price. 
@@ -106,7 +106,7 @@ In order to meet the business requirement, we have set the epics and user storie
    - Dashboard has been deployed with the predictor.
 
 - User Story 5: As a technical user, I want to understand the ML steps that were used to deliver the sale price predictor, so that I can understand the model.
-   - Model evaluation and evaluation techniques and steps are listed on thet Feature Engineering and Modelling Evaluation jupyter notebook with plots and tables for better visibility.
+   - Model evaluation, techniques and steps are listed on thet Feature Engineering and Modelling Evaluation jupyter notebook with plots and tables for better visibility.
 
 - User Story 6: As a technical user, I want to know the model performance, so that I can see how reliable the model is. 
    - Train and test set R2 scores are listed on Modelling Evaluation notebook and also on the ML House Price Prediction section at the deployed app.
@@ -119,10 +119,10 @@ In order to meet the business requirement, we have set the epics and user storie
 
 
 
-## Hypothesis and how to validate?
+## Hypothesis and How to Validate
 
-* From the 23 variables we needed to collect top 10 variables that correlates the best with out target variable, `SalePrice`. To do this, we have conducted Spearman, Pearson and Power Predictive Score (PPS) tests.
-* Top 10 variables were, 
+* From the 23 variables we needed to collect the top 10 variables that correlate the best with our target variable, `SalePrice`. To do this, we have conducted Spearman, Pearson and Power Predictive Score (PPS) tests.
+* Top 10 variables are, 
 ```
 'GarageArea', 'GarageYrBlt', 'GrLivArea', 'KitchenQual', 'MasVnrArea', 'OverallQual', 'TotalBsmtSF', 'YearBuilt', 'YearRemodAdd'
 ```
@@ -130,9 +130,9 @@ In order to meet the business requirement, we have set the epics and user storie
 ```
 'KitchenQual', 'OverallQual'
 ```
-* Since those two variables are also included in the top 10 selection from Spearman and Pearson study, we have finalised that above top 10 variables to have the highest correlation with the SalePrice in creating a prediction ML model. 
+* Since those two variables from PPS test are also included in the top 10 selections from Spearman and Pearson study, we have finalised that above top 10 variables to have the highest correlation with the SalePrice in creating a prediction ML model. 
 
-* With the given top 10 variables, Exploratory data analysis (EDA) was followed to examine the exact relationship with the SalePrice to derive the hypothesis. 
+* With the given top 10 variables, Exploratory Data Analysis (EDA) was followed to examine the exact relationship with the SalePrice to derive the hypothesis. 
 
 ### Hypothesis
 
@@ -148,7 +148,7 @@ In order to meet the business requirement, we have set the epics and user storie
    * We can make our hypothesis 3 as ***The quality of the house positively correlates with the sale price***
 
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
+## The Rationale to Map the Business Requirements to the Data Visualisations and ML tasks
 
 * **BR1 - The client is interested in discovering how the house attributes correlate with the sale price.**
    
@@ -162,7 +162,7 @@ In order to meet the business requirement, we have set the epics and user storie
    * Since the client is interested in predicting continuous value, we use ***regression machine learning*** to meet the second business requirement. 
    * After we have collected the 10 most correlated variables to our sale price, we conducted a Grid Search CV to check which regression model should best fit to our project. 
    * `GradientBoostingRegressor` showed the best performance amount the regressor studies with mean score 0.8, and train and test set with each 0.86 and 0.77 R2 Score. 
-   * With Gradient Boosing Regressor, the 4 most best variables that correlated to sale price was 'OverallQual', 'TotalBsmtSF', 'GarageArea', '2ndFlrSF'
+   * With Gradient Boosing Regressor, the 4 most best variables that correlated to sale price were 'OverallQual', 'TotalBsmtSF', 'GarageArea', '2ndFlrSF'
    * With the selected regressor and the best correlated variables, we predicted the sale price for the 4 inherited houses also created a widget that could predict the sale price by inputting the values. 
    * Details of the study could be found at [Modelling and Evaluation Notebook](https://github.com/frankiesanjana/housing-price-predictor/blob/f6ce8dd8a4334a05213efaf45d96bd102e85cb7d/jupyter_notebooks/05-modelling-evaluation.ipynb)
 
@@ -387,4 +387,4 @@ Since we will stick with the python 3.8.12 we do the following steps to avoid er
 - The template used for this project was provided by Code Institute's [code repository](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues)
 
 ### Media
-- CRISP-MD step image from [Wikipedia](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining)
+- CRISP-DM step image from [Wikipedia](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining)
