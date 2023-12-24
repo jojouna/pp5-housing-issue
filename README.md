@@ -7,6 +7,26 @@ Housing Price Predictor is a project developed to predict housing price in Ames,
 Live app can be found [here](https://pp5-housing-price-04711200f028.herokuapp.com/) 
 (*Ctrl or Cmd + mouse click to open on a new tab*)
 
+## Table of Content
+
+* [Business Requirements](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#business-requirements)
+* [Dataset Content](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#dataset-content)
+* [Hypothesis and how to validate?](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#hypothesis-and-how-to-validate)
+   * [Hypothesis](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#hypothesis)
+* [The rationale to map the business requirements to the Data Visualisations and ML tasks](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
+* [ML Business Case](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#ml-business-case)
+* [Dashboard Design](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#dashboard-design)
+   * [Page 1: Quick Project Summary](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#page-1-quick-project-summary)
+   * [Page 2: House Price Correlation Study (BR1)](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#page-2-house-price-correlation-study-br1)
+   * [Page 3: Project Hypothesis and Validation](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#page-3-project-hypothesis-and-validation)
+   * [Page 4: Predict House Price (BR2)](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#page-4-predict-house-price-br2)
+   * [Page 5: ML: House Price Predictor](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#page-5-ml-house-price-predictor)
+* [Unfixed Bugs](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#unfixed-bugs)
+* [Testing](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#testing)
+* [Deployment](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#deployment)
+   * [Steps](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#steps)
+   * [Workspace Environment](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#workspace-environment)
+
 
 ## Business Requirements
 
@@ -260,8 +280,6 @@ This page contains,
 
 ## Deployment
 
-Deployment was done through Heroku. 
-
 ### Steps
 
 Before deploying on Heroku, there are files that needed to be included on my repository.
@@ -290,7 +308,6 @@ Since we will stick with the python 3.8.12 we do the following steps to avoid er
 9. Scroll down to the API Key section and click Reveal. Copy the key.
 10. Go back to my IDE workspace, enter the following command in the terminal: `heroku login -i`, and enter my email then API key that I copied when prompted.
 10. Then use the command `heroku stack:set heroku-20 -a <pp5-housing-price>`
-
 11. Go back to Heroku and now select the main branch to deploy, then click Deploy Branch.
 
 
@@ -303,142 +320,20 @@ Since we will stick with the python 3.8.12 we do the following steps to avoid er
 - This made me to easily work on cross environments.
 
 
-## Credits 
+## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+### Code 
+
+* [CodeInstitute Project Portfolio 5 study note](https://learn.codeinstitute.net/dashboard)
+   * I have reused and adapted the codes from Code Institute's various courses of predictive analysis. The code that have been adapted are all written on the python file.
+* [Streamlit](https://docs.streamlit.io/library/api-reference)
+* [Seaborn](https://seaborn.pydata.org/api.html)
+* [Pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html)
+* [Numpy](https://numpy.org/doc/stable/reference/index.html)
+* [Matplotlib](https://matplotlib.org/stable/api/index.html)
+* [Medium](https://medium.com/) and [Analytics Vidhya](https://www.analyticsvidhya.com/blog/) for more reading
+
 
 ### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open Source site
-- The images used for the gallery page were taken from this other open-source site
-
-
-
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
-
-
-----
-
-## Codeanywhere Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Codeanywhere Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Codeanywhere Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use. 
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. Log into <a href="https://app.codeanywhere.com/" target="_blank" rel="noreferrer">CodeAnywhere</a> with your GitHub account.
-
-1. On your Dashboard, click on the New Workspace button
-
-1. Paste in the URL you copied from GitHub earlier
-
-1. Click Create
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and <code>pip3 install -r requirements.txt</code>
-
-1. In the terminal type <code>pip3 install jupyter</code>
-
-1. In the terminal type <code>jupyter notebook --NotebookApp.token='' --NotebookApp.password=''</code> to start the jupyter server.
-
-1. Open port 8888 preview or browser
-
-1. Open the jupyter_notebooks directory in the jupyter webpage that has opened and click on the notebook you want to open.
-
-1. Click the button Not Trusted and choose Trust.
-
-Note that the kernel says Python 3. It inherits from the workspace so it will be Python-3.8.12 as installed by our template. To confirm this you can use <code>! python --version</code> in a notebook code cell.
-
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In your Cloud IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-
-
-## Business Requirements
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
-
-Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
-
-* 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-* 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
-
-
-## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them).
-
-
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
-
-
-## ML Business Case
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
-
-
-## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
-
-
-
-## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
-
-## Deployment
-### Heroku
-
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
-
-
-
-## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
-
-
-## Credits 
-
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
-
-### Content 
-
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open Source site
-- The images used for the gallery page were taken from this other open-source site
-
-
-
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
-
+- The template used for this project was provided by Code Institute's [code repository](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues)
