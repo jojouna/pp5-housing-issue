@@ -9,8 +9,8 @@ Live app can be found [here](https://pp5-housing-price-04711200f028.herokuapp.co
 
 ## Table of Content
 
-* [Business Requirements](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#business-requirements)
 * [Dataset Content](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#dataset-content)
+* [Business Requirements](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#business-requirements)
 * [Hypothesis and how to validate?](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#hypothesis-and-how-to-validate)
    * [Hypothesis](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#hypothesis)
 * [The rationale to map the business requirements to the Data Visualisations and ML tasks](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
@@ -25,28 +25,13 @@ Live app can be found [here](https://pp5-housing-price-04711200f028.herokuapp.co
 * [Testing](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#testing)
 * [Deployment](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#deployment)
    * [Steps](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#steps)
-   * [Workspace Environment](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#workspace-environment)
+   * [Workspace Environment](https://github.com/choyoon88/pp5-housing-issue/tree/main?tab=readme-ov-file#worspace-environment)
 * [Credits](https://github.com/choyoon88/pp5-housing-issue#credits)
-
-
-## Business Requirements
-
-The client has received an inheritance from a deceased great-grandfather, and needs help if the client could maximize the sales price for the inherited properties. Also the client is interested in predicting the sale price from any house in Ames, Iowa in case of future property ownership in that area.
-
-We are using a public dataset with house prices for Ames, Iowa that the client provided. 
-
-* BR1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-* BR2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
-
-### Epics
-
-
-### User Story
 
 
 ## Dataset Content
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). 
-* The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+* The dataset has 1460 rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
 |:----|:----|:----|
@@ -75,6 +60,38 @@ We are using a public dataset with house prices for Ames, Iowa that the client p
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
+
+## Business Requirements
+
+The client has received an inheritance from a deceased great-grandfather, and needs help if the client could maximize the sales price for the inherited properties. Also the client is interested in predicting the sale price from any house in Ames, Iowa in case of future property ownership in that area.
+
+We are using a public dataset with house prices for Ames, Iowa that the client provided. 
+
+* BR1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+* BR2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+
+In order to meet the business requirement, we have set the epics and user stories. Also the epics process is mapped with CRISP-MD (Cross Industry Standard Process for Data Mining). See the below image for CRISP-MD steps.
+
+![crisp-dm](readme_images/CRISP-DM_Process_Diagram.png)
+
+### Epics
+
+- Business understanding
+   - CRISP-DM Business Understanding
+- Data gathering and colletion
+   - CRISP-DM: Data Understanding
+- Data visualistion, cleaning and preparation
+   - CRISP-DM: Data Prepatation
+- Model training and optimisation
+   - CRISP-MD: Modelling, Evaluation
+- Dashboard planning, designing and development
+   - CRISP-MD: Business Understanding and Data Understanding
+- Dashboard deployment
+   - CRISP-MD: Deployment
+
+### User Story
+
+- User Story 1: As a client, I would want to know which housing attributes correlates the most in sale price so that I can
 
 
 ## Hypothesis and how to validate?
@@ -343,3 +360,6 @@ Since we will stick with the python 3.8.12 we do the following steps to avoid er
 ### Content 
 
 - The template used for this project was provided by Code Institute's [code repository](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues)
+
+### Media
+- CRISP-MD step image from [Wikipedia](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining)
