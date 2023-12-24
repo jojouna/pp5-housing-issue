@@ -38,6 +38,11 @@ We are using a public dataset with house prices for Ames, Iowa that the client p
 * BR1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
 * BR2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
+### Epics
+
+
+### User Story
+
 
 ## Dataset Content
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). 
