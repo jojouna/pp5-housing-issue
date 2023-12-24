@@ -91,7 +91,30 @@ In order to meet the business requirement, we have set the epics and user storie
 
 ### User Story
 
-- User Story 1: As a client, I would want to know which housing attributes correlates the most in sale price so that I can
+- User Story 1: As a client, I would want to know which housing attributes correlates the most in sale price so that I can base my attributes in predicting sale price. 
+   - Produced a Spearman, Pearson and PPS heatmap to visualise the highly correlated variables, and conducted a modelling test to find the best features that correlates to the sale price.
+
+- User Story 2: As a client, I would want to know the predicted sale price of my 4 inherited houses, so that I can sell them at the maximum price as possible.
+   - Using the trained model, we applied the house attribute data for the 4 inherited houses to predict the sale price. 
+
+- User Story 3: As a client, I would want to predict the sale price of any houses in Ames, Iowa, so that I can have insights of the property market in Ames, Iowa.
+   - Using the trained model, we created a section to input the values of the most correlated housing attributes to have a predicted sale price.
+
+- User Story 4: As a client, I want a dashboard, so that I can display the results and have the price predictor as a stand alone application. 
+   - Dashboard has been deployed with the predictor.
+
+- User Story 5: As a technical user, I want to understand the ML steps that were used to deliver the sale price predictor, so that I can understand the model.
+   - Model evaluation and evaluation techniques and steps are listed on thet Feature Engineering and Modelling Evaluation jupyter notebook with plots and tables for better visibility.
+
+- User Story 6: As a technical user, I want to know the model performance, so that I can see how reliable the model is. 
+   - Train and test set R2 scores are listed on Modelling Evaluation notebook and also on the ML House Price Prediction section at the deployed app.
+
+- User Story 7: As a user, I want to interact with the predictor widget, so that I can play around with the tool to have a real-time sale price.
+   - Sale price predictor has been developed and deployed on the live app under Sale Price Predictor section.
+
+- User Story 8: As a user, I want to know the source of the dataset, so that I can understand about the dataset and the limitation.
+   - Details of the dataset has been described on the dashboard and also on this readme file.
+
 
 
 ## Hypothesis and how to validate?
