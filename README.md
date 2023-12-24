@@ -326,7 +326,7 @@ Since we will stick with the python 3.8.12 we do the following steps to avoid er
 ### Code 
 
 * [CodeInstitute Project Portfolio 5 study note](https://learn.codeinstitute.net/dashboard)
-   * I have reused and adapted the codes from Code Institute's various courses of predictive analysis. The code that have been adapted are all written on the python file.
+   * I have reused and adapted the codes from Code Institute's various courses of predictive analysis. The codes that have been adapted are all written on the Jupyter notebooks and Python files.
 * [Streamlit](https://docs.streamlit.io/library/api-reference)
 * [Seaborn](https://seaborn.pydata.org/api.html)
 * [Pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html)
