@@ -98,11 +98,36 @@ We are using a public dataset with house prices for Ames, Iowa that the client p
    * Details of the study could be found at [Modelling and Evaluation Notebook](https://github.com/frankiesanjana/housing-price-predictor/blob/f6ce8dd8a4334a05213efaf45d96bd102e85cb7d/jupyter_notebooks/05-modelling-evaluation.ipynb)
 
 
-
-
 ## ML Business Case
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
 
+* Machine Learning model is trained to meet the second business model requesting to predict a sale price. 
+
+   * The model should predict the sale price of the client's four houses.
+   * Also it should allow to predict the sale price of other houses in Ames, Iowa with the given attributes of the house. 
+
+* The regression model to use is *linear regression* since we are predicting a value from several continuous variables. 
+* The ideal outcome is to provide the client with an insight of house attributes that could maximise the sale price.
+* We have agreed with the client to have the below matrix:
+   
+   * R2 score should be at least 0.75
+   * The model is considered a failure if the R2 score did not reach at least 0.75. In such case, extra modelling evaluation is needed to find and develop the model. 
+
+* The output is defined as a continuous value for sale price in US dollar. 
+
+   * We will present the predicted sale price for the client's four inherited house and also the summed amount for the price. 
+   * We also present a live widget that could predict the sale price by entering values of the house attributes. 
+
+* Our client has an excellent understanding and knowledge of property prices in Belgium.
+
+   * Since the client has some background understanding on housing market, the client will try to use their own knowledge first when predicting the sale price of the inherited houses and the prices in Ames, Iowa. 
+   * Although the background knowledge could be helpful in some ways, this could lead to an inaccurate prediction considering that the housing markets have different circumstances across the area and/or country. 
+   * Therefore, we proceed with the development of a machine learning model. 
+
+* The training data are a public dataset with house prices in Ames, Iowa. Dataset is provided by the client.
+
+   * Dataset has 1460 house data with 24 features including sale price. 
+   * Some variables had too many missing data. So we have dropped 2 variables which are `EnclosedPorch` and `WoodDeckSF`
+   * Our target variable is `SalePrice`
 
 ## Dashboard Design
 
@@ -121,7 +146,6 @@ We are using a public dataset with house prices for Ames, Iowa that the client p
 
 - The project dataset comes from housing price database in [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data) created by Code Institute.
 - The data represents the housing price in Ames, Iowa, USA with 23 aspects of the house such as the size of the house, built year etc. The total number of houses is 1460.
-
 </details>
 
 <details>
@@ -129,19 +153,92 @@ We are using a public dataset with house prices for Ames, Iowa that the client p
 
 The project has two major business requirements.
 
-- BR1: The client is interested in discovering the most relevant variable that correlates with the sale price.
+* BR1: The client is interested in discovering the most relevant variable that correlates with the sale price.
 * BR2: The client wants to have a predicting model of the 4 inherited houses, as well as any other houses in Ames, Iowa.
-
 </details>
 
 
 ### Page 2: House Price Correlation Study (BR1)
 
+This page shows,
+
+* Business requirement that was answered by correlation study. 
+* Checkbox for inspecting the dataset
+* Features with the highest correlation to the sale price
+* Checkbox for displaying plots of sale price and each of the variables that have strong correlation. 
+
+<details>
+<summary>Spearman Correlation</summary>
+
+![spearman](readme_images/spearman.png)
+</details>
+
+<details>
+<summary>Pearson Correlation</summary>
+
+![pearson](readme_images/pearson.png)
+</details>
+
+<details>
+<summary>PPS</summary>
+
+![pps](readme_images/heatmap.png)
+</details>
+
+* Summary of the correlation plots
+* Checkbox for displaying plots between each variables and the sale price. 
+   * Boxplot for categorical variables
+   * LMplot for numerical variables
+   * Line plot for time variables
+
+<details>
+<summary>Data visualisation plots</summary>
+
+![1stlfrsf](readme_images/lmplot_1stflrsf.png)
+![garagearea](readme_images/lmplot_garagearea.png)
+![garageyrblt](readme_images/lineplot_garageyrblt.png)
+![grlivarea](readme_images/lmplot_grlivarea.png)
+![kitchenqual](readme_images/boxplot_kitchenqual.png)
+![masvnrarea](readme_images/lmplot_masvnrarea.png)
+![overallqual](readme_images/boxplot_overallqual.png)
+![totalbsmtsf](readme_images/lmplot_totalbsmtsf.png)
+![yearbuilt](readme_images/lineplot_yearbuilt.png)
+![yearremodadd](readme_images/lineplot_yearremodadd.png)
+
+</details>
+
 ### Page 3: Project Hypothesis and Validation
+
+This page contains the hypothesis we can get from data analying. 
+
+![hypo](readme_images/hypothesis.png)
+
 
 ### Page 4: Predict House Price (BR2)
 
+This page contains,
+
+* Answers for the second business requirement
+* BR2 part 1: Predict the sale price of client's four inherited houses.
+
+   * Shows a raw dataset for the four inherited houses.
+   * Display the predicted sale price for each of the four inherited houses and the summed price.
+
+* BR2 part 2: Predict the sale price of any other house in Ames, Iowa.
+
+   * Widget that the user can input feature values and a button to predict the sale price with the input values.
+   * The user can get a predicted sale price by pressing the 'Predict Sale Price' button after entering the relevant values on the widget. 
+
 ### Page 5: ML: House Price Predictor
+
+This page contains, 
+
+* Conclusion of the pipeline training
+* Selected regressor and the pipeline step
+* Final best features and the importance plot for the best features
+* Conclusion of the pipeline performance 
+* Model evaluation of train and test set
+* Regression Performance Plot
 
 
 ## Unfixed Bugs
@@ -197,6 +294,7 @@ Since we will stick with the python 3.8.12 we do the following steps to avoid er
 
 
 ### Workspace Environment
+
 - Since of the insufficient memory issue with Gitpod, main coding workspace including Jupyter notebook and Streamlit was conducted through Codeanywhere. But writing README file was done on Gitpod. 
 - To continuously work on the up-to-dated repository on a different workspace, I used `git fetch` and `git merge`. 
 - First command was `git fetch origin main` 
