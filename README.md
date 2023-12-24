@@ -8,8 +8,18 @@ Live app can be found [here](https://pp5-housing-price-04711200f028.herokuapp.co
 (*Ctrl or Cmd + mouse click to open on a new tab*)
 
 
+## Business Requirements
+
+The client has received an inheritance from a deceased great-grandfather, and needs help if the client could maximize the sales price for the inherited properties. Also the client is interested in predicting the sale price from any house in Ames, Iowa in case of future property ownership in that area.
+
+We are using a public dataset with house prices for Ames, Iowa that the client provided. 
+
+* BR1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+* BR2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+
+
 ## Dataset Content
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
+* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). 
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
@@ -39,15 +49,6 @@ Live app can be found [here](https://pp5-housing-price-04711200f028.herokuapp.co
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
-
-## Business Requirements
-
-The client has received an inheritance from a deceased great-grandfather, and needs help if the client could maximize the sales price for the inherited properties. Also the client is interested in predicting the sale price from any house in Ames, Iowa in case of future property ownership in that area.
-
-We are using a public dataset with house prices for Ames, Iowa that the client provided. 
-
-* BR1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-* BR2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
 
 ## Hypothesis and how to validate?
