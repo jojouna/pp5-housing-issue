@@ -1,1 +1,4 @@
-readme_images/
+.heroku
+jupyter_notebooks
+readme_images
+outputs
