@@ -10,8 +10,8 @@ streamlit>=1.0.0
 
 feature-engine==1.0.2
 imbalanced-learn==0.11.0
-scikit-learn>=1.0.0
-xgboost>=1.5.0
+scikit-learn==1.0.0
+xgboost==1.5.0
 yellowbrick>=1.4
 Jinja2==3.1.1
 MarkupSafe==2.0.1
